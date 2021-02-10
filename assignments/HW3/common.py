@@ -51,15 +51,6 @@ def project(K, X):
     uv /= uv[-1,:]
     return uv[0,:], uv[1,:]
 
-def project4(K, X):
-    """
-    Computes the pinhole projection of a 4xN array of homogeneous 
-    3D points X using the camera intrinsic matrix K. Returns the 
-    dehomogenized pixel coordinates as an array of size 2xN.
-    """
-    uv = K @ X
-    uv /= uv[2,:]
-    return uv[0,:], uv[1,:]
 
 def draw_frame(K, T, scale=1):
     """
